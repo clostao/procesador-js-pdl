@@ -1,0 +1,72 @@
+{
+    "S":
+    {
+        "'&'":{"notTerminal": "A"},
+        "'/'": {"notTerminal":"B"},
+        "'''":{"notTerminal": "D"},
+        "reg[A-Za-z]": {"notTerminal":"G"},
+        "reg[0-9]":{"notTerminal": "H"},
+        "'='": {"notTerminal":null, "action":-10},
+        "';'":{"notTerminal": null, "action":1},
+        "','":{"notTerminal": null, "action":2},
+        "'('":{"notTerminal": null, "action":3},
+        "')'":{"notTerminal": null, "action":4},
+        "'{'":{"notTerminal": null, "action":5},
+        "'}'":{"notTerminal": null, "action":6},
+        "'+'":{"notTerminal": null, "action":7},
+        "'!'":{"notTerminal": null, "action":8},
+        "'<'":{"notTerminal": null, "action":9},
+        "del":{"notTerminal": null, "action":30}
+    },
+    "A":
+    {
+        "'='":{"notTerminal":null}
+    },
+    "B":
+    {
+        "'/'":{"notTerminal":"C"}
+    },
+    "C":
+    {
+        "reg[^\n]": {"notTerminal": "C"},
+        "eol": {"notTerminal": null, "action":30}
+    },
+    "D":
+    {
+        "reg[A-Za-z]":{"notTerminal":"D"},
+        "reg[0-9]":{"notTerminal":"D"},
+        "del":{"notTerminal":"D"},
+        "'\\'":{"notTerminal":"E"},
+        "'''":{"notTerminal":null, "action":10}
+    },
+    "E":
+    {
+        "'''":{"notTerminal": "D"},
+        "'\\'":{"notTerminal": "D"},
+        "'n'":{"notTerminal": "D"}
+    },
+    "G":
+    {
+        "reg[A-Za-z]":{"notTerminal": "G"},
+        "reg[0-9]":{"notTerminal": "G"},
+        "del": {"notTerminal": null, "action":11},
+        "reg[=;,(){}+!<]":{"notTerminal":null, "action":21}
+    },
+    "H":
+    {
+        "'.'":{"notTerminal":"I"},
+        "reg[0-9]":{"notTerminal":"H"},
+        "del":{"notTerminal":null, "action":12},
+        "reg[=;,(){}+!<]":{"notTerminal":null, "action":22}
+    },
+    "I":
+    {
+        "reg[0-9]":{"notTerminal":"J"}
+    },
+    "J":
+    {
+        "reg[0-9]":{"notTerminal":"J"},
+        "del":{"notTerminal": null, "action":13},
+        "reg[=;,(){}+!<]":{"notTerminal":null, "action":23}
+    }
+}

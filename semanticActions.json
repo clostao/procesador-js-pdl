@@ -1,0 +1,12 @@
+{
+    "=": {"id":"IGUAL"},
+    ";": {"id":"PUNTOCOMA"},
+    ",": {"id":"COMA"},
+    "(": {"id":"AbrParent"},
+    ")": {"id":"CerParent"},
+    "{": {"id":"AbrLlaves"},
+    "}": {"id":"CerLlaves"},
+    "+": {"id":"SUMA"},
+    "!": {"id":"NEGACION"},
+    "<": {"id":"MENOR"}
+}
